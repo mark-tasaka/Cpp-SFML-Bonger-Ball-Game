@@ -1,4 +1,6 @@
 #include "Paddle.h"
+#include "stdafx.h"
+#include "TextureHolder.h"
 
 
 /*Bonger Ball is a student/hobby project created by Mark Tasaka
@@ -9,10 +11,17 @@
 // This the constructor and it is called when we create an object
 Paddle::Paddle(float startX, float startY)
 {
+
+	//m_Sprite = Sprite(TextureHolder::GetTexture("graphic/paddle.png"));
+
 	m_Position.x = startX;
 	m_Position.y = startY;
 
-	m_Shape.setSize(sf::Vector2f(200, 10));
+	//set the origin of sprite in centre
+	//for smooth rotation
+	//m_Sprite.setOrigin(100, 10);
+
+	m_Shape.setSize(sf::Vector2f(200, 20));
 	m_Shape.setPosition(m_Position);
 	
 }
@@ -30,7 +39,6 @@ RectangleShape Paddle::getShape()
 void Paddle::moveLeft()
 {
 	m_MovingLeft = true;
-
 }
 
 void Paddle::moveRight()

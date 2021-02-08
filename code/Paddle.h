@@ -17,6 +17,10 @@ private:
 	// A RectangleShape object
 	RectangleShape m_Shape;
 
+
+	//Paddle Sprite
+	Sprite m_Sprite;
+
 	float m_Speed = 1000.0f;
 
 	bool m_MovingRight = false;
