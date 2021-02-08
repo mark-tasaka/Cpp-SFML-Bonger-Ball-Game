@@ -9,30 +9,34 @@ using namespace sf;
 * Beginning C++ Game Program (second edition), published by Packt>
 */
 
-class Ball
+class Paddle
 {
 private:
-	Vector2f m_Position;	
+	Vector2f m_Position;
+
+	// A RectangleShape object
 	RectangleShape m_Shape;
 
 	float m_Speed = 1000.0f;
-	float m_DirectionX = .2f;
-	float m_DirectionY = .2f;
+
+	bool m_MovingRight = false;
+	bool m_MovingLeft = false;
+
 
 public:
-	Ball(float startX, float startY);
+	Paddle(float startX, float startY);
 
 	FloatRect getPosition();
 
 	RectangleShape getShape();
 
-	float getXVelocity();
+	void moveLeft();
 
-	void reboundSides();
+	void moveRight();
 
-	void reboundPaddleOrTop();
+	void stopLeft();
 
-	void reboundBottom();
+	void stopRight();
 
 	void update(Time dt);
 
