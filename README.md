@@ -1,0 +1,2 @@
+# Cpp-SFML-Bonger-Ball-Game
+‘Bonger Ball’ is a ‘reto-stylize’ game based on the classic 1976 ‘Breakout’ video game written in C++ and utilizing the SFML library.  This game builds on Mr. John Horton’s ‘Pong’ game featured in his book, ‘Beginning C++ Game Programing’, and published by Packt>.  ‘Bonger Ball’ takes Mr. Horton’s ‘Pong” as a starting point, and adds classes and features (sound, graphics, etc.) to this game.
