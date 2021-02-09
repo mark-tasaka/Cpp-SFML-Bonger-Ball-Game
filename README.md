@@ -30,6 +30,9 @@ http://gamecodeschool.com/books/beginning-c-plus-plus-game-programming-2nd-editi
 Update Log:
 
 
+Update 1.03: 2021-02-09
+
+Updates BongerBall.cpp, GameSound.cpp, GameSound.h, Paddle.cpp and Paddle.h.
 
 Update 1.02: 2021-02-08
 
