@@ -12,14 +12,14 @@
 Paddle::Paddle(float startX, float startY)
 {
 
-	//m_Sprite = Sprite(TextureHolder::GetTexture("graphic/paddle.png"));
+	//m_Shape = Sprite(TextureHolder::GetTexture("graphic/paddle.png"));
 
 	m_Position.x = startX;
 	m_Position.y = startY;
 
 	//set the origin of sprite in centre
 	//for smooth rotation
-	//m_Sprite.setOrigin(100, 10);
+	//m_Shape.setOrigin(100, 10);
 
 	m_Shape.setSize(sf::Vector2f(200, 20));
 	m_Shape.setPosition(m_Position);
@@ -31,10 +31,18 @@ FloatRect Paddle::getPosition()
 	return m_Shape.getGlobalBounds();
 }
 
+
 RectangleShape Paddle::getShape()
 {
 	return m_Shape;
 }
+
+/*
+Sprite Paddle::getPaddle()
+{
+	return m_Shape;
+
+}*/
 
 void Paddle::moveLeft()
 {

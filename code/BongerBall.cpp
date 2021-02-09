@@ -39,6 +39,9 @@ int main()
 	// Create a Text object called HUD
 	Text hud;
 
+	//game sounds
+	GameSound gameSound;
+
 	// A cool retro-style font
 	Font font;
 	font.loadFromFile("font/LLPIXEL3.ttf");
@@ -177,7 +180,9 @@ int main()
 			// Add a point to the players score
 			score++;
 
+			//gameSound.getRandomHitSound();
 			hit0.play();
+
 
 		}
 
@@ -187,6 +192,7 @@ int main()
 		{
 			ball.reboundSides();
 
+			//gameSound.getRandomHitSound();
 			hit0.play();
 		}
 
@@ -196,7 +202,9 @@ int main()
 			// Hit detected so reverse the ball and score a point
 			ball.reboundPaddleOrTop();
 
+			//gameSound.getRandomHitSound();
 			hit0.play();
+
 		}
 		/*
 		Draw the paddle, the ball and the HUD
@@ -207,6 +215,7 @@ int main()
 		window.clear();
 		window.draw(hud);
 		window.draw(paddle.getShape());
+		//window.draw(paddle.getPaddle());		
 		window.draw(ball.getShape());
 		window.display();
 	}

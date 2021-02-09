@@ -19,7 +19,7 @@ private:
 
 
 	//Paddle Sprite
-	Sprite m_Sprite;
+	//Sprite m_Shape;
 
 	float m_Speed = 1000.0f;
 
@@ -33,6 +33,8 @@ public:
 	FloatRect getPosition();
 
 	RectangleShape getShape();
+
+	//Sprite getPaddle();
 
 	void moveLeft();
 

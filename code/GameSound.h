@@ -12,9 +12,11 @@ using namespace std;
 class GameSound
 {
 private:
-	const string HIT_SOUND[5] = {"hit0.wav", "hit1.wav",  "hit2.wav",  "hit3.wav",  "hit4.wav"};
+	//const string HIT_SOUND[5] = {"hit0", "hit1",  "hit2",  "hit3",  "hit4"};
+
+	const int HIT_SOUND[5] = {0, 1, 2, 3, 4};
 
 public:
-	int getRandomHitSound();
+	void getRandomHitSound();
 
 };
