@@ -5,7 +5,7 @@ using namespace sf;
 
 
 /*Bonger Ball is a student/hobby project created by Mark Tasaka
-* that builds on Mr. Joh Horton's 'Pong" game from his book
+* that builds on Mr. John Horton's 'Pong" game from his book
 * Beginning C++ Game Program (second edition), published by Packt>
 */
 
@@ -14,12 +14,15 @@ class Paddle
 private:
 	Vector2f m_Position;
 
-	// A RectangleShape object
-	RectangleShape m_Shape;
+	//NEW
+	Sprite m_Sprite;
 
+	//NEW
+	Texture m_Texture;
 
-	//Paddle Sprite
-	//Sprite m_Shape;
+	//NEW
+	Vector2f m_Resolution;
+
 
 	float m_Speed = 1000.0f;
 
@@ -29,12 +32,16 @@ private:
 
 public:
 	Paddle(float startX, float startY);
+	//Paddle();
 
 	FloatRect getPosition();
 
-	RectangleShape getShape();
+	//NEW
+	Vector2f getCenter();
 
-	//Sprite getPaddle();
+	//NEW
+	Sprite getSprite();
+
 
 	void moveLeft();
 
@@ -43,6 +50,10 @@ public:
 	void stopLeft();
 
 	void stopRight();
+
+	void hitSideStopLeft();
+
+	void hitSideStopRight();
 
 	void update(Time dt);
 

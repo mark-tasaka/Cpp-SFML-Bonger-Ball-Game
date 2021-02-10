@@ -1,4 +1,6 @@
 #include "Ball.h"
+#include "stdafx.h"
+//#include "TextureHolder.h"
 
 /*Bonger Ball is a student/hobby project created by Mark Tasaka
 * that builds on Mr. Joh Horton's 'Pong" game from his book
@@ -11,10 +13,13 @@ Ball::Ball(float startX, float startY)
 	m_Position.x = startX;
 	m_Position.y = startY;
 
-	m_Shape.setSize(sf::Vector2f(16, 16));
-	m_Shape.setPosition(m_Position);
+	m_Texture.loadFromFile("graphic/ball.png");
+	m_Sprite.setTexture(m_Texture);
+	m_Sprite.setOrigin(8, 8);
+		
 }
 
+/*
 FloatRect Ball::getPosition()
 {
 	return m_Shape.getGlobalBounds();
@@ -23,7 +28,24 @@ FloatRect Ball::getPosition()
 RectangleShape Ball::getShape()
 {
 	return m_Shape;
+}*/
+
+FloatRect Ball::getPosition()
+{
+	return m_Sprite.getGlobalBounds();
 }
+
+Sprite Ball::getSprite()
+{
+	return m_Sprite;
+}
+
+Vector2f Ball::getCenter()
+{
+	return m_Position;
+}
+
+
 
 float Ball::getXVelocity()
 {
@@ -55,5 +77,6 @@ void Ball::update(Time dt)
 	m_Position.x += m_DirectionX * m_Speed * dt.asSeconds();
 
 	// Move the ball and the bat
-	m_Shape.setPosition(m_Position);
+	//m_Shape.setPosition(m_Position);
+	m_Sprite.setPosition(m_Position);
 }

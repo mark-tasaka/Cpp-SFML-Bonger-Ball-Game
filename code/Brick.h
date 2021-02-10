@@ -9,49 +9,39 @@ using namespace sf;
 * Beginning C++ Game Program (second edition), published by Packt>
 */
 
-class Ball
+class Brick
 {
 private:
 	Vector2f m_Position;
 
-	//NEW
+	//Brick Sprite
 	Sprite m_Sprite;
 
-	//NEW
+	//Brick Texture
 	Texture m_Texture;
 
-	//NEW
+	//Brick Resolution
 	Vector2f m_Resolution;
 
-	//RectangleShape m_Shape;
+	bool m_IsBroken = false;
 
-	float m_Speed = 1500.0f;
-	float m_DirectionX = 0.2f;
-	float m_DirectionY = 0.2f;
 
 public:
-	Ball(float startX, float startY);
+	//Brick C'tor
+	//Brick(float startX, float startY);
+	Brick();
+	void spawn(float startX, float startY);
 
 	FloatRect getPosition();
 
-	//RectangleShape getShape();
-
-
-	//NEW
 	Vector2f getCenter();
-
-	//NEW
+	
 	Sprite getSprite();
 
+	bool hit();
 
-	float getXVelocity();
+	bool isBroken();
 
-	void reboundSides();
-
-	void reboundPaddleOrTop();
-
-	void reboundBottom();
-
-	void update(Time dt);
+	void update();
 
 };

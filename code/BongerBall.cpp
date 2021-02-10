@@ -1,5 +1,6 @@
 #include "Paddle.h"
 #include "Ball.h"
+#include "Brick.h"
 #include "stdafx.h"
 #include "GameSound.h"
 #include <sstream>
@@ -26,7 +27,7 @@ int main()
 
 	RenderWindow window(vm, "Bonger Ball", Style::Fullscreen);
 
-
+	int level = 1;
 	int score = 0;
 	int lives = 5;
 
@@ -35,6 +36,12 @@ int main()
 
 	// We will add a ball in the next chapter
 	Ball ball(1920 / 2, 0);
+
+
+	//TESTING FOR BRICK
+	//Brick brick;
+	//brick.spawn(600, 600);
+	//brick.getPosition();
 
 	// Create a Text object called HUD
 	Text hud;
@@ -148,15 +155,29 @@ int main()
 		ball.update(dt);
 		// Update the HUD text
 		std::stringstream ss;
-		ss << "Points: " << score << "    Balls: " << lives;
+		ss << "Level: " << level << "     Points: " << score << "    Balls: " << lives;
 		hud.setString(ss.str());
+
+
+		// Paddle Hits the sides
+		if (paddle.getPosition().left < 0)
+		{
+			paddle.hitSideStopLeft();
+		}
+		
+		
+		if(paddle.getPosition().left + 10 > window.getSize().x)
+		{
+			paddle.hitSideStopRight();
+		}
+
 
 
 		// Handle ball hitting the bottom
 		if (ball.getPosition().top > window.getSize().y)
 		{
 			// reverse the ball direction
-			ball.reboundBottom();
+			//ball.reboundBottom();
 
 			// Remove a life
 			lives--;
@@ -164,6 +185,8 @@ int main()
 			// Check for zero lives
 			if (lives < 1) 
 			{
+				//reset level
+				level = 1;
 				// reset the score
 				score = 0;
 				// reset the lives
@@ -172,13 +195,14 @@ int main()
 
 		}
 
+
 		// Handle ball hitting top
 		if (ball.getPosition().top < 0)
 		{
 			ball.reboundPaddleOrTop();
 
 			// Add a point to the players score
-			score++;
+			//score++;
 
 			//gameSound.getRandomHitSound();
 			hit0.play();
@@ -214,9 +238,14 @@ int main()
 		*/
 		window.clear();
 		window.draw(hud);
-		window.draw(paddle.getShape());
-		//window.draw(paddle.getPaddle());		
-		window.draw(ball.getShape());
+		//window.draw(paddle.getShape());
+		window.draw(paddle.getSprite());		
+		//window.draw(ball.getShape());
+
+		//TESTING BRICK
+		//window.draw(brick.getSprite());
+
+		window.draw(ball.getSprite());
 		window.display();
 	}
 
