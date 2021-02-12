@@ -30,6 +30,12 @@ http://gamecodeschool.com/books/beginning-c-plus-plus-game-programming-2nd-editi
 Update Log:
 
 
+
+Update 1.05: 2021-02-12
+
+Deleted a series of files added to the wrong directory.  Added a for loop to generate the 'bricks' for the game.
+
+
 Update 1.04: 2021-02-10
 
 Updated and added new graphics.  Updated several .cpp and .h files.
