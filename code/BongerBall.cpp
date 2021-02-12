@@ -39,7 +39,31 @@ int main()
 
 
 	//TESTING FOR BRICK
-	//Brick brick;
+
+	//int numBricks = 20;
+	vector<Brick> brickVector;
+
+	int xCoordinates = 100;
+	int yCoordinates = 100;
+
+	for (int i = 0; i < 30; i++)
+	{
+		Brick brick(xCoordinates, yCoordinates);
+		brickVector.push_back(brick);
+
+		xCoordinates += 100;
+
+		if (i == 9 || i == 19)
+		{
+			yCoordinates += 20;
+			xCoordinates = 100;
+		}
+
+		brickVector[i].update();
+	}
+
+
+	//Brick brick(600.0, 600.0);
 	//brick.spawn(600, 600);
 	//brick.getPosition();
 
@@ -153,6 +177,8 @@ int main()
 		Time dt = clock.restart();
 		paddle.update(dt);
 		ball.update(dt);
+
+		//brick.update();
 		// Update the HUD text
 		std::stringstream ss;
 		ss << "Level: " << level << "     Points: " << score << "    Balls: " << lives;
@@ -177,7 +203,7 @@ int main()
 		if (ball.getPosition().top > window.getSize().y)
 		{
 			// reverse the ball direction
-			//ball.reboundBottom();
+			ball.reboundBottom();
 
 			// Remove a life
 			lives--;
@@ -244,6 +270,10 @@ int main()
 
 		//TESTING BRICK
 		//window.draw(brick.getSprite());
+		for (int i = 0; i < brickVector.size(); i++)
+		{
+			window.draw(brickVector[i].getSprite());
+		}
 
 		window.draw(ball.getSprite());
 		window.display();

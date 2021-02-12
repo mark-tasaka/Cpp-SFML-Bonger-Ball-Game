@@ -9,7 +9,7 @@
 
 // This the constructor and it is called when we create an object
 
-void Brick::spawn(float startX, float startY)
+Brick::Brick(float startX, float startY)
 {
 	m_Position.x = startX;
 	m_Position.y = startY;
@@ -19,6 +19,18 @@ void Brick::spawn(float startX, float startY)
 	m_Sprite.setOrigin(50, 10);
 
 }
+
+/*
+void Brick::spawn(float startX, float startY)
+{
+	m_Position.x = startX;
+	m_Position.y = startY;
+
+	m_Texture.loadFromFile("graphic/brick.png");
+	m_Sprite.setTexture(m_Texture);
+	m_Sprite.setOrigin(50, 10);
+
+}*/
 
 
 

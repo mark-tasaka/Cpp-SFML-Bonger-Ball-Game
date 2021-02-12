@@ -19,16 +19,6 @@ Ball::Ball(float startX, float startY)
 		
 }
 
-/*
-FloatRect Ball::getPosition()
-{
-	return m_Shape.getGlobalBounds();
-}
-
-RectangleShape Ball::getShape()
-{
-	return m_Shape;
-}*/
 
 FloatRect Ball::getPosition()
 {
@@ -65,9 +55,11 @@ void Ball::reboundPaddleOrTop()
 
 void Ball::reboundBottom()
 {
-	m_Position.y = 0;
-	m_Position.x = 500;
+	m_Position.y = 50;
+	//m_Position.x = 500;
+	m_Position.x = 1920 / 2;
 	m_DirectionY = -m_DirectionY;
+	m_DirectionX = -m_DirectionX;
 }
 
 void Ball::update(Time dt)

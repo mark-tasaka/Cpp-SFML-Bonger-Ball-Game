@@ -28,9 +28,9 @@ private:
 
 public:
 	//Brick C'tor
-	//Brick(float startX, float startY);
-	Brick();
-	void spawn(float startX, float startY);
+	Brick(float startX, float startY);
+	//Brick();
+	//void spawn(float startX, float startY);
 
 	FloatRect getPosition();
 

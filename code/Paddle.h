@@ -26,6 +26,7 @@ private:
 
 	float m_Speed = 1000.0f;
 
+
 	bool m_MovingRight = false;
 	bool m_MovingLeft = false;
 
